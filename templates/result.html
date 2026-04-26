@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>📊 Analysis Result</h1>
+
+        <div class="result-box">
+
+            <!-- Category -->
+            <div class="category">
+                {{ category }}
+            </div>
+
+            <!-- Reason -->
+            <p>
+                <strong>Reason:</strong><br>
+                {{ reason }}
+            </p>
+
+            <!-- Suggestions -->
+            <p><strong>Suggestions:</strong></p>
+            <ul>
+                {% for s in suggestions %}
+                    <li>{{ s }}</li>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+        <a href="/" class="back-btn">⬅ Analyze Again</a>
+    </div>
+
+</body>
+</html>
